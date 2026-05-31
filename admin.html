@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Admin | Nyadhi Secondary School</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <h1>EduConnect Admin</h1>
+      <p>Manage school notices and homework</p>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="notices.html">View Notices</a>
+      <a href="homework.html">View Homework</a>
+    </nav>
+  </header>
+
+  <section class="page-title">
+    <h2>Admin Panel</h2>
+    <p>Add school notices and homework updates.</p>
+  </section>
+
+  <section class="section">
+    <div class="admin-grid">
+
+      <div class="admin-card">
+        <h3>Add Notice</h3>
+
+        <form id="noticeForm">
+          <input type="text" id="noticeTitle" placeholder="Notice Title" required />
+          <textarea id="noticeMessage" placeholder="Notice Message" required></textarea>
+          <input type="date" id="noticeDate" required />
+          <button type="submit">Add Notice</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h3>Add Homework</h3>
+
+        <form id="homeworkForm">
+          <input type="text" id="homeworkClass" placeholder="Class / Grade" required />
+          <input type="text" id="homeworkSubject" placeholder="Subject" required />
+          <textarea id="homeworkTask" placeholder="Homework Instructions" required></textarea>
+          <input type="date" id="homeworkDueDate" required />
+          <button type="submit">Add Homework</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section light">
+    <h2>Admin Instructions</h2>
+
+    <p>
+      After adding a notice, open the Notices page to view it. After adding homework,
+      open the Homework page to view it.
+    </p>
+
+    <div class="button-group">
+      <a href="notices.html" class="btn">Check Notices</a>
+      <a href="homework.html" class="btn secondary">Check Homework</a>
+      <button id="clearDataBtn" class="danger-btn">Clear All Data</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Nyadhi Secondary School Admin Panel</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

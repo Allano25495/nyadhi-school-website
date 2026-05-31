@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+.header {
+  background: #003366;
+  color: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo h1 {
+  font-size: 28px;
+}
+
+.logo p {
+  font-size: 14px;
+  color: #dce9ff;
+}
+
+.navbar {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.navbar a:hover {
+  color: #ffd700;
+}
+
+.admin-link {
+  background: #ffd700;
+  color: #003366 !important;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.hero {
+  min-height: 75vh;
+  background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)),
+              url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 40px 8%;
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.page-title {
+  background: #eef4ff;
+  padding: 50px 8%;
+  text-align: center;
+}
+
+.page-title h2 {
+  color: #003366;
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.section {
+  padding: 60px 8%;
+  background: white;
+}
+
+.section.light {
+  background: #eef4ff;
+}
+
+.section h2 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.section p {
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 25px;
+}
+.cards + .cards {
+  margin-top: 20px;
+}
+
+.card,
+.notice-card,
+.admin-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #003366;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.card h3,
+.notice-card h3,
+.admin-card h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.card ul,
+.simple-list {
+  padding-left: 20px;
+}
+
+.simple-list {
+  margin-bottom: 20px;
+}
+
+.list-container {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.notice-card small {
+  color: #666;
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffd700;
+  color: #003366;
+  padding: 12px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.secondary {
+  background: white;
+  border: 1px solid #003366;
+}
+
+.small-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #003366;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.small-link:hover {
+  text-decoration: underline;
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.contact-form,
+.admin-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.admin-card input,
+.admin-card textarea {
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.contact-form textarea,
+.admin-card textarea {
+  min-height: 100px;
+}
+
+.contact-form button,
+.admin-card button {
+  background: #003366;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form button:hover,
+.admin-card button:hover {
+  background: #0055aa;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.danger-btn {
+  background: #b00020;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.danger-btn:hover {
+  background: #8a0019;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 40px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Mobile screen */
+@media (max-width: 768px) {
+  .header {
+    display: block;
+    text-align: center;
+  }
+
+  .navbar {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .hero-content h2 {
+    font-size: 34px;
+  }
+
+  .cards,
+  .contact-box,
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    margin-bottom: 10px;
+  }
+
+  .page-title h2 {
+    font-size: 30px;
+  }
+}
