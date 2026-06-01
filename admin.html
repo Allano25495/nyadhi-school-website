@@ -12,25 +12,34 @@
 
   <header class="header">
     <div class="logo">
-      <h1>EduConnect Admin</h1>
-      <p>Manage school notices and homework</p>
+      <h1>Nyadhi School Admin</h1>
+      <p>Manage notices, homework, and events</p>
     </div>
 
     <nav class="navbar">
       <a href="index.html">Home</a>
-      <a href="notices.html">View Notices</a>
-      <a href="homework.html">View Homework</a>
+      <a href="about.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="academics.html">Academics</a>
+      <a href="notices.html">Notices</a>
+      <a href="homework.html">Homework</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="fees.html">Fees</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="page-title">
     <h2>Admin Panel</h2>
-    <p>Add school notices and homework updates.</p>
+    <p>Add school notices, homework updates, and school events.</p>
   </section>
 
   <section class="section">
     <div class="admin-grid">
 
+      <!-- ADD NOTICE -->
       <div class="admin-card">
         <h3>Add Notice</h3>
 
@@ -42,6 +51,7 @@
         </form>
       </div>
 
+      <!-- ADD HOMEWORK -->
       <div class="admin-card">
         <h3>Add Homework</h3>
 
@@ -54,6 +64,18 @@
         </form>
       </div>
 
+      <!-- ADD EVENT -->
+      <div class="admin-card">
+        <h3>Add Event</h3>
+
+        <form id="eventForm">
+          <input type="text" id="eventTitle" placeholder="Event Title" required />
+          <textarea id="eventDescription" placeholder="Event Description" required></textarea>
+          <input type="date" id="eventDate" required />
+          <button type="submit">Add event</button>
+        </form>
+      </div>
+
     </div>
   </section>
 
@@ -61,13 +83,14 @@
     <h2>Admin Instructions</h2>
 
     <p>
-      After adding a notice, open the Notices page to view it. After adding homework,
-      open the Homework page to view it.
+      Use this admin page to add school notices, homework assignments, and school events.
+      After adding information, open the related page to confirm that it appears correctly.
     </p>
 
     <div class="button-group">
       <a href="notices.html" class="btn">Check Notices</a>
       <a href="homework.html" class="btn secondary">Check Homework</a>
+      <a href="events.html" class="btn secondary">Check Events</a>
       <button id="clearDataBtn" class="danger-btn">Clear All Data</button>
     </div>
   </section>

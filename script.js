@@ -13,8 +13,7 @@ if (contactForm) {
 
 
 // ------------------------------
-// DEFAULT DATA
-// This data appears if the user has not added anything yet.
+// DEFAULT NOTICES
 // ------------------------------
 const defaultNotices = [
   {
@@ -29,18 +28,56 @@ const defaultNotices = [
   }
 ];
 
+
+// ------------------------------
+// DEFAULT HOMEWORK - GRADE 9 TO GRADE 12
+// ------------------------------
 const defaultHomework = [
   {
-    className: "Grade 6",
+    className: "Grade 9",
     subject: "Mathematics",
-    task: "Complete exercises on fractions and submit on Friday.",
+    task: "Complete the algebra assignment on linear equations and submit it on Friday.",
     dueDate: "2026-06-15"
   },
   {
-    className: "Grade 4",
+    className: "Grade 10",
     subject: "English",
-    task: "Write a short composition about “My School”.",
+    task: "Write a one-page essay on the importance of discipline in school.",
     dueDate: "2026-06-16"
+  },
+  {
+    className: "Grade 11",
+    subject: "Biology",
+    task: "Read the topic on cell structure and answer the revision questions.",
+    dueDate: "2026-06-17"
+  },
+  {
+    className: "Grade 12",
+    subject: "Business Studies",
+    task: "Prepare short notes on sources of business finance.",
+    dueDate: "2026-06-18"
+  }
+];
+
+
+// ------------------------------
+// DEFAULT EVENTS
+// ------------------------------
+const defaultEvents = [
+  {
+    title: "Parents Meeting",
+    description: "All parents are invited for a school meeting at 9:00 AM.",
+    date: "2026-06-20"
+  },
+  {
+    title: "Midterm Exams",
+    description: "Midterm exams will begin on Monday. Learners are encouraged to revise early.",
+    date: "2026-07-01"
+  },
+  {
+    title: "Sports Day",
+    description: "The school will hold a sports day for learners, teachers, and parents.",
+    date: "2026-07-15"
   }
 ];
 
@@ -68,6 +105,16 @@ function getHomework() {
   return defaultHomework;
 }
 
+function getEvents() {
+  const events = localStorage.getItem("schoolEvents");
+
+  if (events) {
+    return JSON.parse(events);
+  }
+
+  return defaultEvents;
+}
+
 
 // ------------------------------
 // SAVE DATA TO LOCAL STORAGE
@@ -78,6 +125,10 @@ function saveNotices(notices) {
 
 function saveHomework(homework) {
   localStorage.setItem("schoolHomework", JSON.stringify(homework));
+}
+
+function saveEvents(events) {
+  localStorage.setItem("schoolEvents", JSON.stringify(events));
 }
 
 
@@ -127,6 +178,31 @@ if (homeworkList) {
     `;
 
     homeworkList.appendChild(homeworkCard);
+  });
+}
+
+
+// ------------------------------
+// DISPLAY EVENTS ON events.html
+// ------------------------------
+const eventList = document.getElementById("eventList");
+
+if (eventList) {
+  const events = getEvents();
+
+  eventList.innerHTML = "";
+
+  events.forEach(function (eventItem) {
+    const eventCard = document.createElement("div");
+    eventCard.className = "notice-card";
+
+    eventCard.innerHTML = `
+      <h3>${eventItem.title}</h3>
+      <p>${eventItem.description}</p>
+      <small>Date: ${eventItem.date}</small>
+    `;
+
+    eventList.appendChild(eventCard);
   });
 }
 
@@ -194,17 +270,48 @@ if (homeworkForm) {
 
 
 // ------------------------------
+// ADMIN: ADD EVENT
+// ------------------------------
+const eventForm = document.getElementById("eventForm");
+
+if (eventForm) {
+  eventForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const title = document.getElementById("eventTitle").value;
+    const description = document.getElementById("eventDescription").value;
+    const date = document.getElementById("eventDate").value;
+
+    const events = getEvents();
+
+    const newEvent = {
+      title: title,
+      description: description,
+      date: date
+    };
+
+    events.unshift(newEvent);
+    saveEvents(events);
+
+    alert("Event added successfully.");
+    eventForm.reset();
+  });
+}
+
+
+// ------------------------------
 // ADMIN: CLEAR ALL DATA
 // ------------------------------
 const clearDataBtn = document.getElementById("clearDataBtn");
 
 if (clearDataBtn) {
   clearDataBtn.addEventListener("click", function () {
-    const confirmClear = confirm("Are you sure you want to clear all notices and homework?");
+    const confirmClear = confirm("Are you sure you want to clear all notices, homework, and events?");
 
     if (confirmClear) {
       localStorage.removeItem("schoolNotices");
       localStorage.removeItem("schoolHomework");
+      localStorage.removeItem("schoolEvents");
 
       alert("All saved data has been cleared.");
     }
