@@ -133,6 +133,31 @@ function saveEvents(events) {
 
 
 // ------------------------------
+// DELETE FUNCTIONS
+// ------------------------------
+function deleteNotice(index) {
+  const notices = getNotices();
+  notices.splice(index, 1);
+  saveNotices(notices);
+  location.reload();
+}
+
+function deleteHomework(index) {
+  const homeworkItems = getHomework();
+  homeworkItems.splice(index, 1);
+  saveHomework(homeworkItems);
+  location.reload();
+}
+
+function deleteEvent(index) {
+  const events = getEvents();
+  events.splice(index, 1);
+  saveEvents(events);
+  location.reload();
+}
+
+
+// ------------------------------
 // DISPLAY NOTICES ON notices.html
 // ------------------------------
 const noticeList = document.getElementById("noticeList");
@@ -233,6 +258,7 @@ if (noticeForm) {
 
     alert("Notice added successfully.");
     noticeForm.reset();
+    location.reload();
   });
 }
 
@@ -262,58 +288,8 @@ if (homeworkForm) {
 
     homeworkItems.unshift(newHomework);
     saveHomework(homeworkItems);
-
-    alert("Homework added successfully.");
-    homeworkForm.reset();
-  });
-}
-
-
-// ------------------------------
-// ADMIN: ADD EVENT
-// ------------------------------
-const eventForm = document.getElementById("eventForm");
-
-if (eventForm) {
-  eventForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const title = document.getElementById("eventTitle").value;
-    const description = document.getElementById("eventDescription").value;
-    const date = document.getElementById("eventDate").value;
-
-    const events = getEvents();
-
-    const newEvent = {
-      title: title,
-      description: description,
-      date: date
-    };
-
-    events.unshift(newEvent);
-    saveEvents(events);
-
-    alert("Event added successfully.");
-    eventForm.reset();
-  });
-}
-
-
-// ------------------------------
-// ADMIN: CLEAR ALL DATA
-// ------------------------------
-const clearDataBtn = document.getElementById("clearDataBtn");
-
-if (clearDataBtn) {
-  clearDataBtn.addEventListener("click", function () {
-    const confirmClear = confirm("Are you sure you want to clear all notices, homework, and events?");
-
-    if (confirmClear) {
-      localStorage.removeItem("schoolNotices");
-      localStorage.removeItem("schoolHomework");
-      localStorage.removeItem("schoolEvents");
-
-      alert("All saved data has been cleared.");
-    }
+alert("Homework added successfully.");
+homeworkForm.reset();
+location.reload();
   });
 }
