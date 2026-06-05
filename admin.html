@@ -17,29 +17,30 @@
     </div>
 
     <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="admissions.html">Admissions</a>
-      <a href="academics.html">Academics</a>
+      <a href="index.html">Website Home</a>
       <a href="notices.html">Notices</a>
       <a href="homework.html">Homework</a>
-      <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
-      <a href="downloads.html">Downloads</a>
-      <a href="fees.html">Fees</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="page-title">
     <h2>Admin Panel</h2>
-    <p>Add school notices, homework updates, and school events.</p>
+    <p>Add official school notices, homework assignments, and school events.</p>
   </section>
 
   <section class="section">
+    <h2>Update School Communication</h2>
+
+    <p>
+      Use this page to add information that parents and learners can view on the public website.
+      Notices appear on the Notices page, homework appears on the Homework page, and events appear
+      on the Events page.
+    </p>
+
     <div class="admin-grid">
 
-      <!-- ADD NOTICE -->
       <div class="admin-card">
         <h3>Add Notice</h3>
 
@@ -51,7 +52,6 @@
         </form>
       </div>
 
-      <!-- ADD HOMEWORK -->
       <div class="admin-card">
         <h3>Add Homework</h3>
 
@@ -64,7 +64,6 @@
         </form>
       </div>
 
-      <!-- ADD EVENT -->
       <div class="admin-card">
         <h3>Add Event</h3>
 
@@ -72,7 +71,7 @@
           <input type="text" id="eventTitle" placeholder="Event Title" required />
           <textarea id="eventDescription" placeholder="Event Description" required></textarea>
           <input type="date" id="eventDate" required />
-          <button type="submit">Add event</button>
+          <button type="submit">Add Event</button>
         </form>
       </div>
 
@@ -80,11 +79,11 @@
   </section>
 
   <section class="section light">
-    <h2>Admin Instructions</h2>
+    <h2>Admin Quick Actions</h2>
 
     <p>
-      Use this admin page to add school notices, homework assignments, and school events.
-      After adding information, open the related page to confirm that it appears correctly.
+      After adding information, open the related page to confirm it appears correctly.
+      The clear button removes saved notices, homework, and events from this browser.
     </p>
 
     <div class="button-group">
@@ -92,6 +91,37 @@
       <a href="homework.html" class="btn secondary">Check Homework</a>
       <a href="events.html" class="btn secondary">Check Events</a>
       <button id="clearDataBtn" class="danger-btn">Clear All Data</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Sample Updates to Try</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Notice Example</h3>
+        <p>
+          Title: Fees Reminder<br>
+          Message: Parents are reminded to clear school fees before Friday.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Homework Example</h3>
+        <p>
+          Class: Grade 10<br>
+          Subject: English<br>
+          Task: Write a one-page essay on discipline in school.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Event Example</h3>
+        <p>
+          Title: Parents Meeting<br>
+          Description: All parents are invited for a meeting at 9:00 AM.
+        </p>
+      </div>
     </div>
   </section>
 
